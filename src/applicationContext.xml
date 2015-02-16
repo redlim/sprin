@@ -49,6 +49,10 @@
         <property name="y" value="0"></property>
     </bean>
 
+    <bean class="com.ayscom.prueba.DisplayNameBeanPostProcessor">
+
+    </bean>
+
     <!--<alias name="triangle" alias="triangle-alias"></alias>-->
 
 </beans>
