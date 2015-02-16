@@ -42,6 +42,7 @@
     <bean id="circle" class="com.ayscom.prueba.Circle">
         <property name="center" ref="pointA"></property>
     </bean>
+    <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"></bean>
     <!--<alias name="triangle" alias="triangle-alias"></alias>-->
 
 </beans>

@@ -1,5 +1,7 @@
 package com.ayscom.prueba;
 
+import org.springframework.beans.factory.annotation.Required;
+
 /**
  * Created by wilder on 2/16/15.
  */
@@ -10,6 +12,7 @@ public class Circle implements Shape {
         return center;
     }
 
+    @Required
     public void setCenter(Point center) {
         this.center = center;
     }
