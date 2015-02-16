@@ -1,12 +1,18 @@
 package com.ayscom.prueba;
 
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.BeanNameAware;
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
+
 import java.util.List;
 
 /**
  * Created by wilder on 2/16/15.
  */
-public class Triangle {
-
+public class Triangle implements InitializingBean, DisposableBean {
 
     private List<Point> pointLists;
 
@@ -17,11 +23,11 @@ public class Triangle {
     public void setPointLists(List<Point> pointLists) {
         this.pointLists = pointLists;
     }
-;
 
     private Point pointA;
     private Point pointB;
     private Point pointC;
+    private ApplicationContext context= null;
     public Point getPointA() {
         return pointA;
     }
@@ -51,7 +57,25 @@ public class Triangle {
 
         for(Point point : pointLists )
         System.out.println("Point: " + point);
-        System.out.println( "Point A " + getPointA() + ", point B " + getPointB() + ", Point C : " + getPointC());
+      //  System.out.println( "Point A " + getPointA() + ", point B " + getPointB() + ", Point C : " + getPointC());
+    }
+
+    @Override
+    public void afterPropertiesSet() throws Exception {
+        System.out.println("InitializingBean in Triangle");
+    }
+
+    @Override
+    public void destroy() throws Exception {
+        System.out.println("DisposableBean destroy in bean");
+    }
+
+    public void miInit(){
+        System.out.println("Initial triangle");
+    }
+
+    public void miEnd(){
+        System.out.println("Fin triangle");
     }
 }
 
