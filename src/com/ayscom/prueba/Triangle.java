@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * Created by wilder on 2/16/15.
  */
-public class Triangle implements InitializingBean, DisposableBean {
+public class Triangle implements InitializingBean, DisposableBean, Shape {
 
     private List<Point> pointLists;
 
@@ -52,9 +52,9 @@ public class Triangle implements InitializingBean, DisposableBean {
         this.pointC = pointC;
     }
 
-
+    @Override
     public void draw(){
-
+        System.out.println("Triangle:");
         for(Point point : pointLists )
         System.out.println("Point: " + point);
       //  System.out.println( "Point A " + getPointA() + ", point B " + getPointB() + ", Point C : " + getPointC());
