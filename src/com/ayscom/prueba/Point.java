@@ -1,8 +1,11 @@
 package com.ayscom.prueba;
 
+import org.springframework.stereotype.Component;
+
 /**
  * Created by wilder on 2/16/15.
  */
+
 public class Point {
 
     private int y;
