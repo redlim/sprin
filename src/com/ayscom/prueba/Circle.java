@@ -1,5 +1,7 @@
 package com.ayscom.prueba;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import javax.annotation.Resource;
 
 /**
@@ -22,5 +24,16 @@ public class Circle implements Shape {
     @Override
     public void draw() {
         System.out.println("Circle: Point is " +  getCenter());
+    }
+
+
+    @PostConstruct
+    public void initializeCircle(){
+        System.out.println("Init of Circle");
+        }
+
+    @PreDestroy
+    public void destroyCircle(){
+        System.out.println("Destruyelo destruyelo");
     }
 }
