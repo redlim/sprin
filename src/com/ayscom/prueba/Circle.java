@@ -1,6 +1,6 @@
 package com.ayscom.prueba;
 
-import org.springframework.beans.factory.annotation.Required;
+import javax.annotation.Resource;
 
 /**
  * Created by wilder on 2/16/15.
@@ -12,7 +12,8 @@ public class Circle implements Shape {
         return center;
     }
 
-    @Required
+    //@Resource("pointC")
+    @Resource
     public void setCenter(Point center) {
         this.center = center;
     }
